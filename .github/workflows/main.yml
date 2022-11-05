@@ -20,6 +20,10 @@ jobs:
         distribution: 'adopt'
     - name: Maven Build
       run: mvn clean package -Dmaven.test.skip=true
+    - name: Save state
+      run: echo "{name}={value}" >> $GITHUB_STATE
+    - name: Set output
+      run: echo "{name}={value}" >> $GITHUB_OUTPUT
     - name: Login to docker hub
       uses: docker/login-action@v1
       with:

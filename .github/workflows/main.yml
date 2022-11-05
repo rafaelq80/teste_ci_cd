@@ -30,4 +30,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: user/images:tag
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/hellocicd

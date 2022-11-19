@@ -26,8 +26,9 @@ jobs:
     name: Render Deploy
     runs-on: ubuntu-18.04
     steps:
-      - name: Render Deploy Action
-        uses: johnbeynon/render-deploy-action@v0.0.8
+      - name: Trigger deployment
+        uses: sws2apps/render-deployment@main #consider using pin for dependabot auto update
         with:
-         service-id: ${{ secrets.RENDER_ID }} 
-         api-key: ${{ secrets.RENDER_API_KEY }}
+          serviceId: ${{ secrets.RENDER_ID }}
+          apiKey: ${{ secrets.RENDER_API_KEY }}
+          multiple: false #optional, default true

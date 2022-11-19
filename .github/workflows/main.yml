@@ -21,6 +21,11 @@ jobs:
         run: mvn clean verify
       - name: Test with Maven
         run: mvn -B test --file pom.xml
+ 
+  run_deploy:
+    name: Render Deploy
+    runs-on: ubuntu-18.04
+    steps:
       - name: Render Deploy Action
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:

@@ -33,13 +33,12 @@ jobs:
         uses: actions/setup-node@v3.5.1
         with:
           node-version: 18.x
-          cache: 'npm'
 
       - name: Install Packages
-        run: npm ci
+        run: yarn install
         
       - name: Test
-        run: npm test
+        run: yarn test
         
       - name: Install Railway
         run: npm i -g @railway/cli

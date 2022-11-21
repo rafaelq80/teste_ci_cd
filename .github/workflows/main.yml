@@ -29,16 +29,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Use Node 16
-        uses: actions/setup-node@v3
+      - name: Use Node 18
+        uses: actions/setup-node@v3.5.1
         with:
-          node-version: 16.x
-
-      - name: Install packages
-        run: nvm install --lts
-
-      #- name: Run tests
-       # run: yarn test
+          node-version: 18.x
 
       - name: Install Railway
         run: npm i -g @railway/cli

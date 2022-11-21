@@ -37,9 +37,6 @@ jobs:
       - name: Install Packages
         run: yarn install
         
-      - name: Test
-        run: yarn test
-        
       - name: Install Railway
         run: npm i -g @railway/cli
 

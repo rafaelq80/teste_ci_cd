@@ -33,9 +33,13 @@ jobs:
         uses: actions/setup-node@v3.5.1
         with:
           node-version: 18.x
+          cache: 'npm'
 
       - name: Install Packages
-        run: sudo apt install node
+        run: npm ci
+        
+      - name: Test
+        run: npm test
         
       - name: Install Railway
         run: npm i -g @railway/cli

@@ -15,7 +15,7 @@ RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
 FROM openjdk:17.0.1-jdk-oracle
 
-VOLUME /tmp
+#VOLUME /tmp
 
 ARG DEPENDENCY=/workspace/app/target/dependency
 

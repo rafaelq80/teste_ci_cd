@@ -7,7 +7,7 @@ on:
     
 jobs:
   run_test:
-    name: Testes da Aplicação
+    name: CI - Testes da Aplicação
     runs-on: ubuntu-22.04
     steps:
       - run: echo "Iniciando a execução dos Testes"
@@ -23,7 +23,7 @@ jobs:
         run: mvn -B test --file pom.xml
 
   run_build:
-   name: Build da aplicação
+   name: CI - Build da aplicação
    runs-on: ubuntu-22.04
    needs: run_test
    steps:
@@ -46,11 +46,12 @@ jobs:
       with:
         context: .
         push: true
-        tags: 
+        tags: |
           ${{ secrets.DOCKERHUB_USERNAME }}/hellocicd:${{ github.run_number }}
+          ${{ secrets.DOCKERHUB_USERNAME }}/hellocicd:latest
   
   run_deploy:
-    name: Railway Deploy
+    name: CD - Deploy no Railway 
     runs-on: ubuntu-22.04
     needs: run_build
     steps:

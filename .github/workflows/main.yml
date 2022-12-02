@@ -48,7 +48,6 @@ jobs:
         push: true
         tags: 
           ${{ secrets.DOCKERHUB_USERNAME }}/hellocicd:${{ github.run_number }}
-          ${{ secrets.DOCKERHUB_USERNAME }}/hellocicd:latest
   
   run_deploy:
     name: Railway Deploy
